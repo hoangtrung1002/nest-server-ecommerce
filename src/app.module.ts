@@ -7,6 +7,8 @@ import { CategoryModule } from './modules/category/category.module';
 import { CustomerModule } from './modules/customer/customer.module';
 import { ProductModule } from './modules/product/product.module';
 import { TagModule } from './modules/tag/tag.module';
+import { StaffModule } from './modules/staff/staff.module';
+import { RoleModule } from './modules/role/role.module';
 
 @Module({
   imports: [
@@ -24,6 +26,8 @@ import { TagModule } from './modules/tag/tag.module';
     CustomerModule,
     AddressModule,
     TagModule,
+    StaffModule,
+    RoleModule,
   ],
   controllers: [],
   providers: [],
