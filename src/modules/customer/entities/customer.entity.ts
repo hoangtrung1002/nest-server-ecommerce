@@ -5,7 +5,9 @@ import {
   Column,
   CreateDateColumn,
   OneToMany,
+  BeforeInsert,
 } from 'typeorm';
+import * as bcrypt from 'bcrypt';
 
 @Entity()
 export class Customer {
@@ -24,8 +26,8 @@ export class Customer {
   @Column({ type: 'text', unique: true })
   email: string;
 
-  @Column({ type: 'text' })
-  hashedPassword: string;
+  @Column({ type: 'text', select: false })
+  password: string;
 
   @Column({ type: 'boolean', default: false })
   isActive: boolean;
@@ -35,4 +37,9 @@ export class Customer {
 
   @OneToMany(() => Address, (address) => address.customer)
   addresses: Address[];
+
+  @BeforeInsert()
+  async hashedPassword() {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
 }

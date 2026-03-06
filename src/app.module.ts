@@ -9,6 +9,7 @@ import { ProductModule } from './modules/product/product.module';
 import { TagModule } from './modules/tag/tag.module';
 import { StaffModule } from './modules/staff/staff.module';
 import { RoleModule } from './modules/role/role.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { RoleModule } from './modules/role/role.module';
     TagModule,
     StaffModule,
     RoleModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
