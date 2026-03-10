@@ -6,21 +6,9 @@ import {
   MinLength,
 } from 'class-validator';
 
-export class CreateCustomerDto {
-  @IsString()
+export class SignInDto {
   @IsNotEmpty()
-  firstName: string;
-
-  @IsString()
-  @IsNotEmpty()
-  lastName: string;
-
-  @IsString()
-  @IsNotEmpty()
-  phoneNumber: string;
-
   @IsEmail()
-  @IsNotEmpty()
   email: string;
 
   @IsString()

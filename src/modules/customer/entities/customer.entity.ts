@@ -8,6 +8,7 @@ import {
   BeforeInsert,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
+import { Exclude } from 'class-transformer';
 
 @Entity()
 export class Customer {
@@ -26,7 +27,7 @@ export class Customer {
   @Column({ type: 'text', unique: true })
   email: string;
 
-  @Column({ type: 'text', select: false })
+  @Column({ type: 'text' })
   password: string;
 
   @Column({ type: 'boolean', default: false })
