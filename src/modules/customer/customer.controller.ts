@@ -16,9 +16,9 @@ import { UpdateCustomerDto } from './dto/update-customer.dto';
 export class CustomerController {
   constructor(private readonly customerService: CustomerService) {}
 
-  @Post()
-  create(@Body() createCustomerDto: CreateCustomerDto) {
-    return this.customerService.create(createCustomerDto);
+  @Post('sign-up')
+  async signUp(@Body() createCustomerDto: CreateCustomerDto) {
+    return await this.customerService.signUp(createCustomerDto);
   }
 
   @Get()
